@@ -1,0 +1,15 @@
+*
+{
+    box-sizing: border-box;
+}
+
+html,body
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a20;
+    background-color: #eef0f6;
+}
+
+h1 {font-size: 300%;}
