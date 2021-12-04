@@ -77,6 +77,7 @@ h4{color: var(--prColor);}
 .row.center{justify-content: center;}
 .row.space-ev,.row-rev.space-ev{justify-content: space-evenly;}
 .row.space-bt,.row-rev.space-bt{justify-content: space-between;}
+.col.center{align-items: center;}
 
 /* Sizes */
 /* caracter width */
@@ -134,7 +135,7 @@ h4{color: var(--prColor);}
 
 .box > h1
 {
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
   padding-left: 1rem;
   position: relative;
   color: var(--prColor);
@@ -181,11 +182,16 @@ h4{color: var(--prColor);}
   {
     font-size: 75%;
   }
-  h1 {font-size: 3rem;}
-  h2 {font-size: 2.2rem;}
-  h3 {font-size: 1.2rem;}
+  h1 {font-size: 2.1rem;}
+  h2 {font-size: 1.9rem;}
+  h3 {font-size: 1.1rem;}
   h4 {font-size: 1.05rem;}
 
   .row:not(.force){flex-direction: column;}
   .row:not(.force) > *:not(:first-child) {padding-top: 0.2rem; padding-left: 1rem;}
+
+  .rs-row-rev_col {flex-direction: column;}
+  .rs-mt-0{margin-top: 0;}
+
+  .entry{font-size: 3.5rem;}
 }
