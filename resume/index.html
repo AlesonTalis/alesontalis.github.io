@@ -24,14 +24,18 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/portfolio-style.css">
   <script src="https://kit.fontawesome.com/2b8a7478aa.js" crossorigin="anonymous"></script>
-  
+  <style>
+    .hide-objetivos #objetivos {
+      display: none;
+    }
+  </style>
 </head>
-<body>
+<body class="hide-objetivos">
   <div class="main">
     <h1 class="entry">&lt;<span>cv</span>&gt;</h1>
 
     <!-- tilulo/qrcode -->
-    <div class="row-rev rs-row-rev_col space-bt noqr">
+    <div class="row-rev rs-row-rev_col space-bt noqr" id="nome">
       <div class="box col center">
         <a class="qrcode-link -mt-4r rs-mt-0" href="https://alesontalis.github.io/resume/">
           <img src="./images/qr_200px.png" alt="qr" srcset="./images/qr_200px.png">  
@@ -71,13 +75,13 @@
     </div>
 
     <!-- sobre -->
-    <div class="box">
+    <div class="box" id="sobre">
       <h1>sobre</h1>
       <p>Tenho 25 anos. Atualmente cursando <span>Analize e desenvolvimento de sistemas</span>, com pelo menos seis anos de conhecimento em .Net. Com o início de um pequeno projeto de vídeo Indie, preciso de conseguir um suporte financeiro temporário para suprir as necessidades do projeto.</p>
     </div>
 
     <!-- formação -->
-    <div class="box">
+    <div class="box" id="formacao">
       <h1>formação</h1>
       <div class="-row">
         <div class="col">
@@ -108,7 +112,7 @@
     </div>
 
     <!-- projetos -->
-    <div class="box">
+    <div class="box" id="projetos">
       <h1>projetos</h1>
       <p>Project EVOLVE <span>Unity para PC</span></p>
       <p>HouseApp <span>Flutter para Mobile</span></p>
@@ -116,7 +120,7 @@
     </div>
 
     <!-- conhecimentos -->
-    <div class="box">
+    <div class="box" id="conhecimentos">
       <h1>conhecimentos</h1>
       <p style="line-height: 1.4rem;">
         <em class="talent talent-0">HTML</em>
@@ -137,12 +141,12 @@
     </div>
 
     <!-- objetivos -->
-    <div class="box">
+    <div class="box" id="objetivos">
       <h1>objetivos</h1>
       <p>Crescer profissionalmente; Concluir meu primeiro Vídeo Game;</p>
     </div>
 
-    <div class="box noprint true-p">
+    <div id="historia" class="box noprint true-p">
       <h1>minha história*</h1>
       <input type="checkbox" id="read-1" class="read-more" data-label="Ler mais">
       <p>
@@ -198,8 +202,28 @@
       </article>
     </div>
 
-
     <h1 class="entry">&lt;&frasl;<span>cv</span>&gt;</h1>
   </div>
+  <script>
+
+    // roll this page to the link when the page is loaded
+    window.onload = function() {
+      const link = window.location.href.split('#')[1];
+      if (link) {
+        const element = document.getElementById(link);
+        // set checkbox id read-1 checked
+        if (link === 'historia')
+        {
+          document.getElementById('read-1').checked = true;
+        }
+
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }
+
+  </script>
 </body>
 </html>
