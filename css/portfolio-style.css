@@ -1,0 +1,240 @@
+body
+{
+  font-family: 'Consolas', monospace;
+}
+
+.entry
+{
+  color: var(--scColor);
+}
+.entry span {color: var(--prColor);}
+/* .entry,.entry span {font-size: 4rem;} */
+
+.row, .row-rev, .col, .col-rev
+{
+  display: flex;
+}
+.row {flex-direction: row;}
+.row-rev {flex-direction: row-reverse;}
+.col {flex-direction: column;}
+.col-rev{flex-direction: column-reverse;}
+
+.row.center{justify-content: center;}
+.row.space-ev,.row-rev.space-ev{justify-content: space-evenly;}
+.row.space-bt,.row-rev.space-bt{justify-content: space-between;}
+.col.center{align-items: center;}
+
+/* Sizes */
+/* caracter width */
+.w-100ch{width: 100ch;}
+/* REM */
+.w-8r{width: 8rem;}
+.mi-w-8r{min-width: 8rem;}
+
+/* margins */
+.-mt-1r{margin-top: -1rem;}
+.-mt-2r{margin-top: -2rem;}
+.-mt-3r{margin-top: -3rem;}
+.-mt-4r{margin-top: -4rem;}
+.-mt-5r{margin-top: -5rem;}
+.mb-05r{margin-bottom: 0.5rem;}
+/* paddins */
+.pb-05r{padding-bottom: 0.5rem;}
+
+.box
+{
+  padding: 1rem 1.5rem;
+}
+
+.box.col > *
+{
+  padding: 0.25rem 0;
+}
+.qrcode-link,.qrcode-link::before {--size: 7.5rem;}
+.qrcode-link
+{
+  position: relative;
+  display: block;
+  /* width: var(--size);
+  height: var(--size); */
+  font-size: 0;
+  padding: 0;
+}
+.qrcode-link img
+{
+  width: var(--size);
+  height: var(--size);
+}
+/* .box.col .qrcode-link{padding: 0;} */
+
+.box .accent
+{
+  color: var(--scColor);
+  font-size: 0.75rem;
+  display: block;
+}
+.row.center .accent{padding-left: 0.25rem; padding-right: 0.25rem;}
+.no-text > .accent span {font-size: 0; display: none;}
+.no-text > .accent {font-size: 1rem;}
+
+
+.noqr .qrcode-link
+{
+  display: none;
+}
+
+.noqr .linkies
+{
+  flex-direction: column;;
+}
+.noqr .linkies a
+{
+  font-size: 0.9rem;
+}
+.noqr .linkies span
+{
+  margin-bottom: 0.25rem;
+}
+
+.noqr .linkies a
+{
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.noqr .linkies a span
+{
+  margin-right: 0.25rem;
+}
+.noqr .linkies a i::before
+{
+  margin-bottom: -0.25rem;
+}
+
+
+.box > h1
+{
+  /* font-size: 2.5rem; */
+  padding-left: 1rem;
+  position: relative;
+  color: var(--prColor);
+}
+.box > h1::before
+{
+  content:'';
+  width: 0.5rem;
+  height: 0.5rem;
+  display: block;
+  background-color: var(--scColor);
+  position: absolute;
+  left: 0;
+  bottom: 0.75rem;
+  border-radius: 50%;
+}
+.box p span {color: var(--scColor);}
+.box p
+{
+  white-space: normal;
+  word-break: break-all;
+}
+
+
+.dot
+{
+  padding-left: 1.2rem;
+  position: relative;
+}
+.dot::before
+{
+  content:'';
+  position: absolute;
+
+  bottom: 50%;
+  left: 0;
+
+  width: 0.75rem;
+  height: 0.25rem;
+
+  background-color: var(--prColor);
+
+  transform: translateY(-50%);
+}
+
+em.talent
+{
+  color: var(--fgColor);
+  position: relative;
+  font-style: normal;
+  padding-bottom: 0.12rem;
+  display: inline-block;
+}
+
+em.talent.talent-0{--percentage:100%;}
+em.talent.talent-9{--percentage:90%;}
+em.talent.talent-8{--percentage:80%;}
+em.talent.talent-7{--percentage:70%;}
+em.talent.talent-6{--percentage:60%;}
+em.talent.talent-5{--percentage:50%;}
+em.talent.talent-4{--percentage:40%;}
+em.talent.talent-3{--percentage:30%;}
+em.talent.talent-2{--percentage:20%;}
+em.talent.talent-1{--percentage:10%;}
+
+em.talent::after
+{
+  content: '';
+  height: 0.1rem;
+  width: var(--percentage);
+  position: absolute;
+  bottom: 0.05rem;
+  left: 0;
+  background-color: var(--scColor);
+}
+em.talent::before
+{
+  content: '';
+  height: 0.1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0.05rem;
+  left: 0;
+  background-color: var(--fgColor);
+}
+
+
+@media only screen and (max-width: 768px) {
+  body
+  {
+    font-size: 75%;
+  }
+  h1 {font-size: 2.1rem;}
+  h2 {font-size: 1.9rem;}
+  h3 {font-size: 1.1rem;}
+  h4 {font-size: 1.05rem;}
+
+  .row:not(.force){flex-direction: column;}
+  .row:not(.force) > *:not(:first-child) {padding-top: 0.2rem; padding-left: 1rem;}
+
+  .rs-row-rev_col {flex-direction: column;}
+  .rs-mt-0{margin-top: 0;}
+
+  .entry{font-size: 3.5rem;}
+
+  
+  .noqr .linkies a
+  {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  .noqr .linkies a span
+  {
+    margin-left: 0.25rem;
+  }
+
+}
+
+/* set html background color to --bgColor when media print */
+@media print {
+  html {background-color: var(--bgColor);}
+}
