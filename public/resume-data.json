@@ -1,0 +1,263 @@
+{
+  "name": "resume",
+  "id": "@#AlesonTalisdeOliveira",
+  "content": [
+    {
+      "type": "sectiontitle",
+      "content": [
+        {
+          "t": "title",
+          "v": "Aleson Talis de Oliveira",
+          "o": ["cap","main"]
+        },
+        {
+          "t": "subtitle",
+          "v": "Programador",
+          "o": ["cap"]
+        }
+      ]
+    },
+    {
+      "type": "sectiontext",
+      "content": [
+        {
+          "t": "title",
+          "v": "sobre"
+        },
+        {
+          "t": "mtext",
+          "v": [
+            { "t": "span", "v": "Tenho 25 anos, solteiro, sem filhos, atualmente cursando "},
+            { "t": "em", "v": "Analize e desenvolvimento de sistemas"},
+            { "t": "span", "v": " pela " },
+            { "t": "em", "v": "PUC Barreiro"},
+            { "t": "span", "v": " , com pelo menos "},
+            { "t": "em", "v": "seis anos"},
+            { "t": "span", "v": " de conhecimento em .Net."},
+            { "t": "br", "v": ""},
+            { "t": "span", "v": "Atualmente, estou procura de uma vaga de "},
+            { "t": "em", "v": "estágio"},
+            { "t": "span", "v": " para poder iniciar minha carreira profissional"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sectionblocks",
+      "var": "formacao",
+      "content": [
+        {
+          "t": "title",
+          "v": "formação"
+        },
+        {
+          "t": "blocks",
+          "v": [
+            {
+              "t": "Ensino médio",
+              "l": "Escola Estadual Pe. João Paulo I",
+              "d": "2018",
+              "m": "conclusão",
+              "a": false
+            },
+            {
+              "t": "Análise e Desenvolvimento de Sistemas",
+              "l": "Pontífica Universidade Católica - Barreiro MG (EAD)",
+              "d": "2024",
+              "m": "previsão",
+              "a": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sectionblocks",
+      "var": "projects",
+      "content": [
+        {
+          "t": "title",
+          "v": "projetos"
+        },
+        {
+          "t": "blocks",
+          "v": [
+            {
+              "name": "Project EVOLVE",
+              "target": "Unity PC",
+              "link": "%site%projects/project-evolve",
+              "desc": "Projeto de video game do tipo micromanagement com construção de fabricas de mundo aberto e procedural em primeira pessoa.",
+              "langs": ["Unity3D", "blender","C#"]
+            },
+            {
+              "name": "Minecraft copy",
+              "target": "Unity PC",
+              "link": "%site%projects/minecraft-copy",
+              "desc": "Recriando o video game Minecraft(tm) usando Unity3D, com todas as mecânicas possíveis.",
+              "langs": ["Unity3D", "blender", "C#"]
+            },
+            {
+              "name": "pizzaapp",
+              "target": "Flutter Android",
+              "link": "%site%projects/pizzaapp",
+              "desc": "Um pequeno aplicativo para pizzaria usando Flutter e Firestore.",
+              "langs": ["Flutter", "Firestore"]
+            },
+            {
+              "name": "Meu Curriculo",
+              "target": "PHP Web",
+              "link": "%site%projects/meu-curriculo",
+              "desc": "Um projeto solicitado para criar um curriculo, usando PHP e MySQL.",
+              "langs": ["HTML", "CSS", "PHP", "MySQL"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sectionblocks",
+      "var": "knowledge",
+      "content": [
+        {
+          "t": "title",
+          "v": "conhecimentos"
+        },
+        {
+          "t": "blocks",
+          "v": [
+            {
+              "l": ".Net",
+              "a": 7,
+              "r": "Pelo menos quatro anos"
+            },
+            {
+              "l": "C#",
+              "a": 8,
+              "r": "Pelo menos cinco anos"
+            },
+            {
+              "l": "HTML",
+              "a": 9,
+              "r": "Desde 2014"
+            },
+            {
+              "l": "CSS",
+              "a": 9,
+              "r": "O rei do CSS!"
+            },
+            {
+              "l": "Javascript",
+              "a": 6,
+              "r": "O suficiente"
+            },
+            {
+              "l": "PHP",
+              "a": 7,
+              "r": "Aprendi logo após o HTML"
+            },
+            {
+              "l": "MySQL",
+              "a": 5,
+              "r": "Bom mas nem tanto"
+            },
+            {
+              "l": "SQL",
+              "a": 4,
+              "r": "MySQL sem o My"
+            },
+            {
+              "l": "Unity3D",
+              "a": 5,
+              "r": "Gosto de montar jogos"
+            },
+            {
+              "l": "Unreal",
+              "a": 3,
+              "r": "Gosto de paisagismo"
+            },
+            {
+              "l": "React",
+              "a": 6,
+              "r": "A um ano detonando"
+            },
+            {
+              "l": "Flutter",
+              "a": 4,
+              "r": "Pode melhorar"
+            },
+            {
+              "l": "GIT",
+              "a": 2,
+              "r": "Github Desktop é mais útil"
+            },
+            {
+              "l": "Python",
+              "a": 2,
+              "r": "não tem ponto-virgula no fim da linha"
+            },
+            {
+              "l": "C++",
+              "a": 0,
+              "r": "é um pouco complicado"
+            },
+            {
+              "l": "React-Native",
+              "a": 2,
+              "r": "BUGS!"
+            },
+            {
+              "l": "Firestore",
+              "a": 3,
+              "r": "centralizado demais"
+            },
+            {
+              "l": "vscode",
+              "a": 9,
+              "r": "sejamos sinceros"
+            },
+            {
+              "l": "Inglês (Intermediário)",
+              "a": 6,
+              "r": "Entendo mas não sei falar bem"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sectionblocks",
+      "var": "formacao",
+      "content": [
+        {
+          "t": "title",
+          "v": "experiências profissionais"
+        },
+        {
+          "t": "blocks",
+          "v": [
+            {
+              "t": "À procura",
+              "l": "",
+              "d": "",
+              "m": "",
+              "a": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sectiontext",
+      "content": [
+        {
+          "t": "title",
+          "v": "objetivos"
+        },
+        {
+          "t": "text",
+          "v": "Por muito tempo pensei que iria conseguir ganhar a vida montando video games. Não completei nenhum. Então meu computador estragou. Entrei na faculdade e agora estou a procura de um estágio/emprego. Pretendo sim, investir na minha carreira profissional como programador, mas meu objetivo inicial é video games, principalmente agora com o Metaverso surgindo."
+        }
+      ]
+    }
+  ]
+}
