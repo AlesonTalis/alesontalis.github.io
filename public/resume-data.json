@@ -28,7 +28,7 @@
           "t": "mtext",
           "v": [
             { "t": "span", "v": "Tenho 25 anos, solteiro, sem filhos, atualmente cursando "},
-            { "t": "em", "v": "Analize e desenvolvimento de sistemas"},
+            { "t": "em", "v": "Análise e desenvolvimento de sistemas"},
             { "t": "span", "v": " pela " },
             { "t": "em", "v": "PUC Barreiro"},
             { "t": "span", "v": " , com pelo menos "},
