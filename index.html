@@ -1,16 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index.18ad4ca2.js"></script>
-    <link rel="modulepreload" href="/assets/vendor.ce0cbf83.js">
-    <link rel="stylesheet" href="/assets/index.74bfabfa.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-  </body>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlesonTalis - Portfólio/CV</title>
+
+  <link rel="stylesheet" href="content/css/main.css">
+  <link rel="stylesheet" href="content/css/resume.css">
+
+  <script src="https://kit.fontawesome.com/2b8a7478aa.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body class="resume">
+  <script>
+    if (window.location.hash)
+    {
+      var hash = window.location.hash.substring(1)
+
+      if (hash === 'basic')
+      {
+        document.querySelector('body').classList.remove('resume')
+        document.querySelector('body').classList.add('basic')
+      }
+    }
+  </script>
+  <main class="tags">
+    <section class="sec-tags">
+      <span>&lt;</span>cv<span>&gt;</span>
+    </section>
+  </main>
+  <main id="main">
+    <!-- <section class="sec-title">
+      <h1>Aleson Talis de Oliveira Ramos</h1>
+      <h2>Programador</h2>
+    </section>
+    <section class="sec-contato">
+
+      <p>
+        <a href="#">
+          <i class="fa-brands fa-linkedin noprint"></i>
+          linkedin.com/in/alesontalis
+        </a>
+      </p>
+
+    </section>
+
+
+    <section class="sec-endereco">
+      <p>
+        Rua Manoel Gonçalves 11 | Washington Pires, Ibirité MG
+      </p>
+    </section>
+
+    <section class="sec-resume">
+      <h3>sobre</h3>
+      <section>
+        <p>
+          Tenho 25 anos, solteiro, sem filhos, atualmente cursando <span>Análise e Desenvolvimento de Sistemas</span> pela <span>PUC Minas - Barreiro</span>, com pelo menos <span>seis anos</span> de conhecimento em .Net.
+          <br>
+          Atualmente, estou procura de uma vaga de <span>estágio</span> para poder iniciar minha carreira profissional
+        </p>
+      </section>
+    </section>
+
+    <section class="sec-formacao">
+      <h3>formação</h3>
+      <section class="flex-col">
+        <div class="flex-row pl-20 active">
+          <div class="flex-3">
+            <h4>Ensino Médio</h4>
+            <p>Escola estadual João Paulo I</p>
+          </div>
+          <div class="flex-1">
+            <p><strong>2018</strong></p>
+            <p><span>conclusão</span></p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="sec-projs">
+      <h3>projetos</h3>
+      <section>
+        <div class="flex-col">
+          <div>
+            <p>Project EVOLVE <span>Unity PC</span></p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="sec-conhecimentos">
+      <h3>conhecimentos</h3>
+      <section>
+        <div class="flex-row flex-wrap skills">
+          <div class="g8">.Net</div>
+          <div class="g9">C#</div>
+        </div>
+      </section>
+    </section>
+
+    <section class="sec-experiencias">
+      <h3>experiências profissionais</h3>
+      <section>
+        <div class="col">
+          <div class="active pl-20">
+            <h4>À procura</h4>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="sec-objetivos">
+      <h3>objetivos</h3>
+      <section>
+        <p>
+          Por muito tempo pensei que iria conseguir ganhar a vida montando video games. Não completei nenhum. Então meu computador estragou. Entrei na faculdade e agora estou a procura de um estágio/emprego. Pretendo sim, investir na minha carreira profissional como programador, mas meu objetivo inicial é video games, principalmente agora com o Metaverso surgindo.
+        </p>
+      </section>
+    </section> -->
+  </main>
+  <main class="tags">
+    <section class="sec-tags">
+      <span>&lt;/</span>cv<span>&gt;</span>
+    </section>
+  </main>
+
+  <script src="content/js/main.resume.js"></script>
+
+</body>
 </html>

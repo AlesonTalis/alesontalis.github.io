@@ -1,0 +1,136 @@
+{
+  "nome":"AlesonTalis",
+  "content":[
+    {
+      "nome":"nome",
+      "title":null,
+      "content": [
+        {"nome":"nome","content":"Aleson Talis de Oliveira Ramos"},
+        {"nome":"titulo","content":"Programador"}
+      ]
+    },
+    {
+      "nome": "contato",
+      "content":[
+        {
+          "nome":"linkedin",
+          "icon":["fa", "fa-linkedin"],
+          "link":"https://linkedin.com/in/alesontalis",
+          "title":"linkedin.com/in/alesontalis"
+        },
+        {
+          "nome":"github",
+          "icon":["fa-brands","fa-github"],
+          "link":"https://github.com/alesontalis",
+          "title":"github.com/alesontalis"
+        },
+        {
+          "nome":"email",
+          "icon":["fa-solid","fa-at"],
+          "link":"mailto:alesontor@gmail.com",
+          "title":"alesontor@gmail.com"
+        },
+        {
+          "nome":"whatsapp",
+          "icon":["fa-brands","fa-whatsapp"],
+          "link":"https://wa.me/5531995686402",
+          "title":"+55(31) 9 9568-6402"
+        },
+        {
+          "nome":"telefone",
+          "icon":["fa-solid","fa-phone"],
+          "link":"tel:31995686402",
+          "title":"(31) 9 9568-6402"
+        }
+      ]
+    },
+    {
+      "nome":"endereco",
+      "content":[
+        {"nome":"casa","content":"Rua Manoel Gonçalves 11 | Washington Pires, Ibirité MG"}
+      ]
+    },
+    {
+      "nome":"sobre",
+      "title":"sobre",
+      "content":[
+        "Tenho 25 anos, solteiro, sem filhos, atualmente cursando Análise e Desenvolvimento de Sistemas pela PUC Minas - Barreiro, com pelo menos seis anos de conhecimento em .Net.",
+        "Atualmente, estou procura de uma vaga de estágio para poder iniciar minha carreira profissional"
+      ]
+    },
+    {
+      "nome":"formacao",
+      "title":"formação",
+      "content":[
+        {
+          "area":"Ensino Médio",
+          "escola":"Escola Estadual João Paulo I",
+          "data":"2018",
+          "acao":"conclusão",
+          "ativo":false
+        },
+        {
+          "area":"Análise e Desenvolvimento de Sistemas - EAD",
+          "escola": "Pontífica Universidade Católica de Minas Gerais - PUC Minas",
+          "data": "2022-2024",
+          "acao":"previsão",
+          "ativo":true
+        }
+      ]
+    },
+    {
+      "nome": "projetos",
+      "title": "projetos",
+      "content": [
+        {
+          "titulo":"ProjectEVOLVE",
+          "area":"Unity PC",
+          "link":""
+        },
+        {
+          "titulo": "Minecraft Copy",
+          "area": "Unity PC",
+          "link": ""
+        },
+        {
+          "titulo": "Meu Curriculo",
+          "area": "Web",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "nome":"objetivos",
+      "title":"objetivos",
+      "content":
+      [
+        "Por muito tempo pensei que iria conseguir ganhar a vida montando video games. Não completei nenhum. Então meu computador estragou. Entrei na faculdade e agora estou a procura de um estágio/emprego. Pretendo sim, investir na minha carreira profissional como programador, mas meu objetivo inicial é video games, principalmente agora com o Metaverso surgindo."
+      ]
+    },
+    {
+      "nome": "conhecimentos",
+      "title": "conhecimentos",
+      "content": [
+        [".Net",9],
+        ["C#",0],
+        ["HTML",9],
+        ["CSS",9],
+        ["Javascript",8],
+        ["PHP",7],
+        ["MySQL",6],
+        ["SQL",5],
+        ["Unity3D", 6],
+        ["Unreal Engine",3],
+        ["React",7],
+        ["Flutter",5],
+        ["GIT",4],
+        ["Python",6],
+        ["C++",3],
+        ["React-Native",5],
+        ["Firestore",2],
+        ["vscode",9],
+        ["Inglês (intermediário)",5]
+      ]
+    }
+  ]
+}
