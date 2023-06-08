@@ -30,6 +30,9 @@ function run()
         case 'formacao' :
           setPageFormacao(item.content, item.title, index)
           break
+        case 'experiencia' :
+          setPageExperiencia(item.content, item.title, index)
+          break
         case 'projetos' :
           setPageProjetos(item.content, item.title, index)
           break
@@ -108,6 +111,51 @@ function setPageFormacao(content,title,index)
     stat.textContent = item.acao
 
     ar1.append(...[area,esco])
+    ar2.append(...[data,stat])
+
+    cont.append(...[ar1,ar2])
+
+    sec.append(cont)
+  })
+
+  sectionElement('sec-formacao', [tit,sec])
+}
+
+function setPageExperiencia(content,title,index)
+{
+  var tit = document.createElement('h3')
+  var sec = document.createElement('section')
+
+  tit.textContent = title
+
+  sec.classList.add('flex-col')
+
+  content.forEach(item => {
+    var cont = document.createElement('div')
+
+    var area = document.createElement('h4')
+    var empr = document.createElement('p')
+    var data = document.createElement('p')
+    var stat = document.createElement('p')
+
+    var ar1 = document.createElement('div')
+    var ar2 = document.createElement('div')
+
+    cont.classList.add('flex-row', 'pl-20', 'pb-5')
+    if (item.ativo === true) cont.classList.add('active')
+
+    ar1.classList.add('flex-3')
+    ar2.classList.add('flex-1')
+
+    data.classList.add('sec')
+    stat.classList.add('pri')
+
+    area.textContent = item.area
+    empr.textContent = item.empresa
+    data.textContent = item.data
+    stat.textContent = item.acao
+
+    ar1.append(...[area,empr])
     ar2.append(...[data,stat])
 
     cont.append(...[ar1,ar2])

@@ -27,8 +27,8 @@
         {
           "nome":"email",
           "icon":["fa-solid","fa-at"],
-          "link":"mailto:alesontor@gmail.com",
-          "title":"alesontor@gmail.com"
+          "link":"mailto:alesontor@hotmail.com",
+          "title":"alesontor@hotmail.com"
         },
         {
           "nome":"whatsapp",
@@ -45,17 +45,12 @@
       ]
     },
     {
-      "nome":"endereco",
-      "content":[
-        {"nome":"casa","content":"Rua Manoel Gonçalves 11 | Washington Pires, Ibirité MG"}
-      ]
-    },
-    {
       "nome":"sobre",
       "title":"sobre",
       "content":[
-        "Tenho 25 anos, solteiro, sem filhos, atualmente cursando Análise e Desenvolvimento de Sistemas pela PUC Minas - Barreiro, com pelo menos seis anos de conhecimento em .Net.",
-        "Atualmente, estou procura de uma vaga de estágio para poder iniciar minha carreira profissional"
+        "Tenho 25 anos, solteiro e não tenho filhos. Estou estudando Análise e Desenvolvimento de Sistemas na Pitágoras, um curso que me interessa muito e que me abre muitas possibilidades profissionais.",
+        "No meu tempo livre, gosto de praticar MTB downhill, um esporte radical que me dá muita adrenalina e diversão. Também gosto de jogar games, principalmente os de ação e aventura.",
+        "Não gosto de bagunça, prefiro manter as coisas organizadas e limpas."
       ]
     },
     {
@@ -72,8 +67,33 @@
         {
           "area":"Análise e Desenvolvimento de Sistemas - EAD",
           "escola": "Pontífica Universidade Católica de Minas Gerais - PUC Minas",
-          "data": "2022-2024",
+          "data": "2022 jan-jul",
+          "acao":"pausado",
+          "ativo":false
+        },
+        {
+          "area":"Análise e Desenvolvimento de Sistemas - EAD",
+          "escola": "Pitagoras Barreiro (Anhanguera Educacional)",
+          "data": "2022 jul-2025",
           "acao":"previsão",
+          "ativo":false
+        }
+      ]
+    },
+    {
+      "nome":"experiencia",
+      "title":"experiência",
+      "content":[
+        {
+          "area":"Estágio - Frontend",
+          "empresa":"M2M Telemetria",
+          "data":"2022 mai-jul",
+          "ativo":false
+        },
+        {
+          "area":"Desenvolvedor Frontend I",
+          "empresa":"M2M Telemetria",
+          "data":"2022 jul",
           "ativo":true
         }
       ]
@@ -96,6 +116,11 @@
           "titulo": "Meu Curriculo",
           "area": "Web",
           "link": ""
+        },
+        {
+          "titulo": "Pagina de Criação de Paginas WEB",
+          "area": "Web",
+          "link": ""
         }
       ]
     },
@@ -104,17 +129,17 @@
       "title":"objetivos",
       "content":
       [
-        "Por muito tempo pensei que iria conseguir ganhar a vida montando video games. Não completei nenhum. Então meu computador estragou. Entrei na faculdade e agora estou a procura de um estágio/emprego. Pretendo sim, investir na minha carreira profissional como programador, mas meu objetivo inicial é video games, principalmente agora com o Metaverso surgindo."
+        "Sou um profissional dedicado e apaixonado por tecnologia, com experiência em desenvolvimento frontend de sites e aplicativos. Tenho interesse em crescer na área de desenvolvedor frontend, e futuramente mudar para backend e jogos. Busco oportunidades de trabalho como freelancer ou por contrato \"PJ\", onde possa aplicar meus conhecimentos e aprender novas habilidades."
       ]
     },
     {
       "nome": "conhecimentos",
       "title": "conhecimentos",
       "content": [
-        [".Net",9],
-        ["C#",0],
-        ["HTML",9],
-        ["CSS",9],
+        [".Net",8],
+        ["C#",7],
+        ["HTML",0],
+        ["CSS",0],
         ["Javascript",8],
         ["PHP",7],
         ["MySQL",6],
@@ -124,11 +149,15 @@
         ["React",7],
         ["Flutter",5],
         ["GIT",4],
+        ["GitFlow",7],
         ["Python",6],
         ["C++",3],
         ["React-Native",5],
         ["Firestore",2],
         ["vscode",9],
+        ["Promp Engenieer",4],
+        ["Windows",9],
+        ["Linux",5],
         ["Inglês (intermediário)",5]
       ]
     }
