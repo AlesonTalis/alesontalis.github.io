@@ -6,7 +6,7 @@
       "title":null,
       "content": [
         {"nome":"nome","content":"Aleson Talis de Oliveira Ramos"},
-        {"nome":"titulo","content":"Programador"}
+        {"nome":"titulo","content":"Desenvolvedor Pleno"}
       ]
     },
     {
@@ -48,9 +48,11 @@
       "nome":"sobre",
       "title":"sobre",
       "content":[
-        "Tenho 25 anos, solteiro e não tenho filhos. Estou estudando Análise e Desenvolvimento de Sistemas na Pitágoras, um curso que me interessa muito e que me abre muitas possibilidades profissionais.",
-        "No meu tempo livre, gosto de praticar MTB downhill, um esporte radical que me dá muita adrenalina e diversão. Também gosto de jogar games, principalmente os de ação e aventura.",
-        "Não gosto de bagunça, prefiro manter as coisas organizadas e limpas."
+        "Tenho 28 anos, solteiro e não tenho filhos. Estou completando o curso de Análise e Desenvolvimento de Sistemas na Pitágoras.",
+        "No meu tempo livre, gosto de jogar videogames de micro-gerenciamento, como Factorio, Satisfactory e Minecraft. Além disso, gosto de assistir filmes e séries de ficção científica, como Star Wars, Star Trek e Doctor Who.",
+        "Quando entediado dos games, pratico projetos pessoais e estudos em programação, principalmente em C# e JavaScript. Também tenho interesse em desenvolvimento de jogos, tanto em Unity quanto em Unreal Engine.",
+        "Não gosto de bagunça, prefiro manter as coisas organizadas e limpas.",
+        "#paidepets, tenho 10 lindos gatos, mas a Gusi é a minha favorita. Ela é uma gata muito carinhosa e adora brincar, me xinga quando passo perto de outro gato."
       ]
     },
     {
@@ -91,9 +93,15 @@
           "ativo":false
         },
         {
-          "area":"Desenvolvedor Frontend I",
+          "area":"Desenvolvedor Frontend Junior",
           "empresa":"M2M Telemetria",
-          "data":"2022 jul",
+          "data":"jul-2022 out-2024",
+          "ativo":false
+        },
+        {
+          "area":"Desenvolvedor Backend Pleno",
+          "empresa":"M2M Telemetria",
+          "data":"2024-out",
           "ativo":true
         }
       ]
@@ -105,22 +113,27 @@
         {
           "titulo":"ProjectEVOLVE",
           "area":"Unity PC",
-          "link":""
+          "link":"private"
         },
         {
           "titulo": "Minecraft Copy",
           "area": "Unity PC",
-          "link": ""
+          "link": "private"
         },
         {
           "titulo": "Meu Curriculo",
           "area": "Web",
-          "link": ""
+          "link": "https://github.com/AlesonTalis/alesontalis.github.io"
         },
         {
           "titulo": "Pagina de Criação de Paginas WEB",
           "area": "Web",
-          "link": ""
+          "link": "private"
+        },
+        {
+          "titulo": "ChatApp",
+          "area": "SASS",
+          "link": "private"
         }
       ]
     },
@@ -129,7 +142,7 @@
       "title":"objetivos",
       "content":
       [
-        "Sou um profissional dedicado e apaixonado por tecnologia, com experiência em desenvolvimento frontend de sites e aplicativos. Tenho interesse em crescer na área de desenvolvedor frontend, e futuramente mudar para backend e jogos. Busco oportunidades de trabalho como freelancer ou por contrato \"PJ\", onde possa aplicar meus conhecimentos e aprender novas habilidades."
+        "Sou um profissional dedicado e apaixonado por tecnologia, com experiência em desenvolvimento frontend de sites e aplicativos. Tenho interesse em crescer na área de desenvolvedor frontend, e futuramente mudar para backend e jogos. Busco oportunidades de trabalho como freelancer ou por contrato \"PJ\", onde possa aplicar meus conhecimentos e aprender novas habilidades. Futuramente, pretendo me especializar em Arquitetura de Software, Inteligência Artificial e Desenvolvimento de Jogos."
       ]
     },
     {
@@ -137,8 +150,8 @@
       "title": "conhecimentos",
       "content": [
         [".Net",8],
-        ["C#",7],
-        ["HTML",0],
+        ["C#",8],
+        ["HTML",9],
         ["CSS",0],
         ["Javascript",8],
         ["PHP",7],
