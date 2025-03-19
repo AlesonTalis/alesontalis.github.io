@@ -49,7 +49,7 @@
       "title":"sobre",
       "content":[
         "Tenho 28 anos, solteiro e não tenho filhos. Estou completando o curso de Análise e Desenvolvimento de Sistemas na Pitágoras.",
-        "No meu tempo livre, gosto de jogar videogames de micro-gerenciamento, como Factorio, Satisfactory e Minecraft. Além disso, gosto de assistir filmes e séries de ficção científica, como Star Wars, Star Trek e Doctor Who.",
+        "No meu tempo livre, gosto de jogar videogames de micro-gerenciamento, como Factorio, Satisfactory e Minecraft. Além disso, gosto de assistir filmes e séries de ficção científica, como Star Wars e Star Trek, ver conteúdo no YouTube relacionados a cosmologia como os videos do canal @SEA",
         "Quando entediado dos games, pratico projetos pessoais e estudos em programação, principalmente em C# e JavaScript. Também tenho interesse em desenvolvimento de jogos, tanto em Unity quanto em Unreal Engine.",
         "Não gosto de bagunça, prefiro manter as coisas organizadas e limpas.",
         "#paidepets, tenho 10 lindos gatos, mas a Gusi é a minha favorita. Ela é uma gata muito carinhosa e adora brincar, me xinga quando passo perto de outro gato."
@@ -90,19 +90,22 @@
           "area":"Estágio - Frontend",
           "empresa":"M2M Telemetria",
           "data":"2022 mai-jul",
-          "ativo":false
+          "ativo":false,
+          "resumo":"\"Estava trabalhando pouco...\""
         },
         {
           "area":"Desenvolvedor Frontend Junior",
           "empresa":"M2M Telemetria",
           "data":"jul-2022 out-2024",
-          "ativo":false
+          "ativo":false,
+          "resumo":"Desenvolvimento de aplicações web utilizando React, Javascript e CSS. Integração com APIs RESTful. Responsável por implementar novas funcionalidades, corrigir bugs e melhorar a performance das aplicações. Construção de uma aplicação Frontend completa apartir de um sistema legado, utilizando o React." 
         },
         {
           "area":"Desenvolvedor Backend Pleno",
           "empresa":"M2M Telemetria",
           "data":"2024-out",
-          "ativo":true
+          "ativo":true,
+          "resumo":"Integração entre banco de dados Sql Server e o frontend usando ASP.NET, gerenciamento de mensagens - tratamento de 7M de mensagens por dia por aplicação. Tendo como responsabilidades: manter o sistema operante, adicionar novas funcionalidades, melhorar desempenho e corrigir bugs."
         }
       ]
     },
@@ -142,7 +145,7 @@
       "title":"objetivos",
       "content":
       [
-        "Sou um profissional dedicado e apaixonado por tecnologia, com experiência em desenvolvimento frontend de sites e aplicativos. Tenho interesse em crescer na área de desenvolvedor frontend, e futuramente mudar para backend e jogos. Busco oportunidades de trabalho como freelancer ou por contrato \"PJ\", onde possa aplicar meus conhecimentos e aprender novas habilidades. Futuramente, pretendo me especializar em Arquitetura de Software, Inteligência Artificial e Desenvolvimento de Jogos."
+        "Sou um profissional dedicado e apaixonado por tecnologia, com experiência em desenvolvimento frontend de sites e aplicativos. Tenho interesse em crescer na área de desenvolvedor frontend, e futuramente mudar para backend e jogos. Busco oportunidades de trabalho - estou atualmente empregado e procurando uma nova oportunidade, onde possa aplicar meus conhecimentos e aprender novas habilidades. Futuramente, pretendo me especializar em Arquitetura de Software, Inteligência Artificial e Desenvolvimento de Jogos. Meu sonho de vida é morar no Chile - pois não gosto de calor e prefiro um clima mais frio, em uma casa autossustentável - de forma que possa viver de forma mais sustentável e em harmonia com a natureza. Além disso, tenho interesse em aprender sobre energias renováveis e tecnologias sustentáveis, como energia solar e eólica, para aplicar em minha casa e ajudar a preservar o meio ambiente."
       ]
     },
     {

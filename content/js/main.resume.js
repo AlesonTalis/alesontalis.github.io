@@ -132,16 +132,21 @@ function setPageExperiencia(content,title,index)
 
   content.forEach(item => {
     var cont = document.createElement('div')
+    var col = document.createElement('div')
+
+    col.classList.add('flex','flex-col','pb-5')
 
     var area = document.createElement('h4')
     var empr = document.createElement('p')
     var data = document.createElement('p')
     var stat = document.createElement('p')
+    var resm = document.createElement('p')
 
     var ar1 = document.createElement('div')
     var ar2 = document.createElement('div')
+    var ar3 = document.createElement('div')
 
-    cont.classList.add('flex-row', 'pl-20', 'pb-5')
+    cont.classList.add('flex-row', 'pl-20')
     if (item.ativo === true) cont.classList.add('active')
 
     ar1.classList.add('flex-3')
@@ -149,18 +154,28 @@ function setPageExperiencia(content,title,index)
 
     data.classList.add('sec')
     stat.classList.add('pri')
+    resm.classList.add('res')
 
     area.textContent = item.area
     empr.textContent = item.empresa
     data.textContent = item.data
     stat.textContent = item.acao
-
+    
     ar1.append(...[area,empr])
     ar2.append(...[data,stat])
-
+    
     cont.append(...[ar1,ar2])
 
-    sec.append(cont)
+    col.append(...[cont])
+
+    if (item.resumo)
+    {
+      resm.textContent = item.resumo
+      ar3.append(resm)
+      col.append(ar3)
+    }
+    
+    sec.append(col)
   })
 
   sectionElement('sec-formacao', [tit,sec])
