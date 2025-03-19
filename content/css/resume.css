@@ -230,6 +230,11 @@ section h4
     text-decoration: none !important;
     font-weight: normal !important;
   }
+
+  section
+  {
+    break-inside: avoid;
+  }
 }
 
 
