@@ -176,8 +176,15 @@ function setPageProjetos(content,title,index)
 
   content.forEach(item => {
     var p = document.createElement('p')
-    
-    p.innerHTML = item.titulo + ' <span>' + item.area + '</span>';
+
+    var innerHtml = item.link === "" ?
+      ' <span>' + item.area + '</span>'
+      : 
+        (item.link !== "private" ?
+        ' <a class="link" href="'+item.link+'" target="blank">' + item.area + '&nbsp;<i class="fa fa-up-right-from-square tags"></i></a>' :
+        ' <span class="link">' + item.area + '&nbsp;<i class="fa fa-user-lock tags"></i></a>')
+      
+    p.innerHTML = item.titulo + innerHtml;
     
     sec.append(p)
   })

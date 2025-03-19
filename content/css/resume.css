@@ -92,9 +92,19 @@ section p
   letter-spacing: 0.05em;
   padding-bottom: calc(var(--padding) * 0.2);
 }
-section p span, section .sec
+section p span, section .sec, section p .link
 {
   color: var(--color-secondary);
+}
+section p a.link
+{
+  text-decoration: underline;
+  font-weight: bold;
+  position: relative;
+}
+section p .link .fa
+{
+  font-size: 0.75rem;
 }
 section p strong, section .pri
 {
@@ -177,7 +187,47 @@ section h4
 
 
 
+@media print {
+  body.resume,body.basic {
+    width: 11in;
+    margin: auto;
+    padding-top: 1in;
+    padding-bottom: 1in;
+    font-family: Arial, Helvetica, sans-serif;
 
+    --color-background: #f1f1f1;
+    --color-text: #212121;
+    --color-primary: var(--color-text);
+    --color-secondary: var(--color-text);
+
+  }
+
+  .tags, .basic .tags, .resume .tags,
+  .active, .basic .active, .resume .active
+  {
+    display: none;
+  }
+  section h3, .basic section h3, .resume section h3
+  {
+    text-transform: capitalize;
+    padding-left: 0;
+  }
+  section h3::after, .basic section h3::after, .resume section h3::after
+  {
+    content: none;
+  }
+  
+  section.sec-formacao div, .basic section.sec-formacao div, .resume section.sec-formacao div
+  {
+    padding-left: 0 !important;
+    flex-direction: column !important;
+  }
+  section p .link, .basic section p .link, .resume section p .link
+  {
+    text-decoration: none !important;
+    font-weight: normal !important;
+  }
+}
 
 
 
