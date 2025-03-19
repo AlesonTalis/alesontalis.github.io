@@ -202,10 +202,13 @@ section h4
 
   }
 
-  .tags, .basic .tags, .resume .tags,
-  .active, .basic .active, .resume .active
+  .tags, .basic .tags, .resume .tags
   {
     display: none;
+  }
+  .active::after, .basic .active::after, .resume .active::after
+  {
+    content: none;
   }
   section h3, .basic section h3, .resume section h3
   {
