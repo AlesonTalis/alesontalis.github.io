@@ -249,7 +249,7 @@ function setPageProjetos(content,title,index)
       : 
         (item.link !== "private" ?
         ' <a class="link" href="'+item.link+'" target="blank">' + parseWildcards(item.area) + '&nbsp;<i class="fa fa-up-right-from-square tags"></i></a>' :
-        ' <span class="link">' + parseWildcards(item.area) + '&nbsp;<i class="fa fa-user-lock tags"></i></a>')
+        ' <span class="link">' + parseWildcards(item.area) + '&nbsp;<i class="fa fa-user-lock tags"></i></span>')
       
     p.innerHTML = parseWildcards(item.titulo) + innerHtml;
     
