@@ -47,43 +47,45 @@ function run()
   })
 }
 
+// Handlers para cada tipo de wild-card (global)
+const handlers = {
+  idade: (arg) => {
+    // Espera data no formato dd/mm/aaaa
+    const [dia, mes, ano] = arg.split('/');
+    if (!dia || !mes || !ano) return '';
+    const birth = new Date(`${ano}-${mes}-${dia}`);
+    const today = new Date();
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+    return age + ' anos';
+  },
+  experiencia: (arg) => {
+    // Exemplo: calcula anos de experiência a partir de uma data inicial (dd/mm/aaaa)
+    const [dia, mes, ano] = arg.split('/');
+    if (!dia || !mes || !ano) return '';
+    const start = new Date(`${ano}-${mes}-${dia}`);
+    const today = new Date();
+    let years = today.getFullYear() - start.getFullYear();
+    const m = today.getMonth() - start.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < start.getDate())) {
+      years--;
+    }
+    return years + (years === 1 ? ' ano de experiência' : ' anos de experiência');
+  },
+  // Adicione outros wild-cards aqui: nome: (arg) => { ... }
+};
+
+const regexText = /\{\{(\w+)\(([^\)]+)\)\}\}/g;
+
 // Função global para processar wild-cards em textos (genérica)
 function parseWildcards(text) {
   if (typeof text !== 'string') return text;
 
-  // Handlers para cada tipo de wild-card
-  const handlers = {
-    idade: (arg) => {
-      // Espera data no formato dd/mm/aaaa
-      const [dia, mes, ano] = arg.split('/');
-      if (!dia || !mes || !ano) return '';
-      const birth = new Date(`${ano}-${mes}-${dia}`);
-      const today = new Date();
-      let age = today.getFullYear() - birth.getFullYear();
-      const m = today.getMonth() - birth.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
-        age--;
-      }
-      return age + ' anos';
-    },
-    experiencia: (arg) => {
-      // Exemplo: calcula anos de experiência a partir de uma data inicial (dd/mm/aaaa)
-      const [dia, mes, ano] = arg.split('/');
-      if (!dia || !mes || !ano) return '';
-      const start = new Date(`${ano}-${mes}-${dia}`);
-      const today = new Date();
-      let years = today.getFullYear() - start.getFullYear();
-      const m = today.getMonth() - start.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < start.getDate())) {
-        years--;
-      }
-      return years + (years === 1 ? ' ano de experiência' : ' anos de experiência');
-    },
-    // Adicione outros wild-cards aqui: nome: (arg) => { ... }
-  };
-
   // Regex genérica para {{nome(arg)}}
-  text = text.replace(/\{\{(\w+)\(([^\)]+)\)\}\}/g, function(match, nome, arg) {
+  text = text.replace(regexText, function(match, nome, arg) {
     if (handlers[nome]) {
       return handlers[nome](arg);
     }
