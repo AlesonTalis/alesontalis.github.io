@@ -69,9 +69,8 @@ const handlers = {
   },
   experiencia: (arg) => {
     // Exemplo: calcula anos de experiência a partir de uma data inicial (dd/mm/aaaa)
-    const [dia, mes, ano] = arg.split('/');
-    if (!dia || !mes || !ano) return '';
-    const start = new Date(`${ano}-${mes}-${dia}`);
+    const start = parseDate(arg);
+    if (!start) return '';
     const today = new Date();
     let years = today.getFullYear() - start.getFullYear();
     const m = today.getMonth() - start.getMonth();
