@@ -47,13 +47,18 @@ function run()
   })
 }
 
+// Helper function to parse date strings in the format dd/mm/aaaa
+function parseDate(dateString) {
+  const [dia, mes, ano] = dateString.split('/');
+  if (!dia || !mes || !ano) return null;
+  return new Date(`${ano}-${mes}-${dia}`);
+}
+
 // Handlers para cada tipo de wild-card (global)
 const handlers = {
   idade: (arg) => {
-    // Espera data no formato dd/mm/aaaa
-    const [dia, mes, ano] = arg.split('/');
-    if (!dia || !mes || !ano) return '';
-    const birth = new Date(`${ano}-${mes}-${dia}`);
+    const birth = parseDate(arg);
+    if (!birth) return '';
     const today = new Date();
     let age = today.getFullYear() - birth.getFullYear();
     const m = today.getMonth() - birth.getMonth();
