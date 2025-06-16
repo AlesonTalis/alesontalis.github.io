@@ -48,7 +48,7 @@
       "nome":"sobre",
       "title":"sobre",
       "content":[
-        "Tenho 28 anos, solteiro e não tenho filhos. Estou completando o curso de Análise e Desenvolvimento de Sistemas na Pitágoras.",
+        "Tenho {{idade(26/04/1996)}}, solteiro e não tenho filhos. Estou completando o curso de Análise e Desenvolvimento de Sistemas na Pitágoras.",
         "No meu tempo livre, gosto de jogar videogames de micro-gerenciamento, como Factorio, Satisfactory e Minecraft. Além disso, gosto de assistir filmes e séries de ficção científica, como Star Wars e Star Trek, ver conteúdo no YouTube relacionados a cosmologia como os videos do canal @SEA",
         "Quando entediado dos games, pratico projetos pessoais e estudos em programação, principalmente em C# e JavaScript. Também tenho interesse em desenvolvimento de jogos, tanto em Unity quanto em Unreal Engine.",
         "Não gosto de bagunça, prefiro manter as coisas organizadas e limpas.",
