@@ -51,7 +51,7 @@ function run()
 function parseDate(dateString) {
   const [dia, mes, ano] = dateString.split('/');
   if (!dia || !mes || !ano) return null;
-  return new Date(`${ano}-${mes}-${dia}`);
+  return new Date(ano, mes - 1, dia);
 }
 
 // Handlers para cada tipo de wild-card (global)
