@@ -47,13 +47,59 @@ function run()
   })
 }
 
+// Função global para processar wild-cards em textos (genérica)
+function parseWildcards(text) {
+  if (typeof text !== 'string') return text;
+
+  // Handlers para cada tipo de wild-card
+  const handlers = {
+    idade: (arg) => {
+      // Espera data no formato dd/mm/aaaa
+      const [dia, mes, ano] = arg.split('/');
+      if (!dia || !mes || !ano) return '';
+      const birth = new Date(`${ano}-${mes}-${dia}`);
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--;
+      }
+      return age + ' anos';
+    },
+    experiencia: (arg) => {
+      // Exemplo: calcula anos de experiência a partir de uma data inicial (dd/mm/aaaa)
+      const [dia, mes, ano] = arg.split('/');
+      if (!dia || !mes || !ano) return '';
+      const start = new Date(`${ano}-${mes}-${dia}`);
+      const today = new Date();
+      let years = today.getFullYear() - start.getFullYear();
+      const m = today.getMonth() - start.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < start.getDate())) {
+        years--;
+      }
+      return years + (years === 1 ? ' ano de experiência' : ' anos de experiência');
+    },
+    // Adicione outros wild-cards aqui: nome: (arg) => { ... }
+  };
+
+  // Regex genérica para {{nome(arg)}}
+  text = text.replace(/\{\{(\w+)\(([^\)]+)\)\}\}/g, function(match, nome, arg) {
+    if (handlers[nome]) {
+      return handlers[nome](arg);
+    }
+    return match; // Se não houver handler, mantém o texto original
+  });
+
+  return text;
+}
+
 function setPageTitle(content, index)
 {
   var items = []
   var h1 = document.createElement('h1')
   var h2 = document.createElement('h2')
-  h1.textContent = content[0].content
-  h2.textContent = content[1].content
+  h1.textContent = parseWildcards(content[0].content)
+  h2.textContent = parseWildcards(content[1].content)
   items = [h1,h2]
 
   sectionElement('sec-title',items, index)
@@ -65,11 +111,11 @@ function setPageResume(content, title, index)
   var tit = document.createElement('h3')
   var sec = document.createElement('section')
   
-  tit.textContent = title
+  tit.textContent = parseWildcards(title)
 
   content.forEach(item => {
     var p = document.createElement('p')
-    p.innerHTML = item
+    p.innerHTML = parseWildcards(item)
     sec.append(p)
   })
 
@@ -81,7 +127,7 @@ function setPageFormacao(content,title,index)
   var tit = document.createElement('h3')
   var sec = document.createElement('section')
 
-  tit.textContent = title
+  tit.textContent = parseWildcards(title)
 
   sec.classList.add('flex-col')
 
@@ -105,10 +151,10 @@ function setPageFormacao(content,title,index)
     data.classList.add('sec')
     stat.classList.add('pri')
 
-    area.textContent = item.area
-    esco.textContent = item.escola
-    data.textContent = item.data
-    stat.textContent = item.acao
+    area.textContent = parseWildcards(item.area)
+    esco.textContent = parseWildcards(item.escola)
+    data.textContent = parseWildcards(item.data)
+    stat.textContent = parseWildcards(item.acao)
 
     ar1.append(...[area,esco])
     ar2.append(...[data,stat])
@@ -126,7 +172,7 @@ function setPageExperiencia(content,title,index)
   var tit = document.createElement('h3')
   var sec = document.createElement('section')
 
-  tit.textContent = title
+  tit.textContent = parseWildcards(title)
 
   sec.classList.add('flex-col')
 
@@ -156,10 +202,10 @@ function setPageExperiencia(content,title,index)
     stat.classList.add('pri')
     resm.classList.add('res')
 
-    area.textContent = item.area
-    empr.textContent = item.empresa
-    data.textContent = item.data
-    stat.textContent = item.acao
+    area.textContent = parseWildcards(item.area)
+    empr.textContent = parseWildcards(item.empresa)
+    data.textContent = parseWildcards(item.data)
+    stat.textContent = parseWildcards(item.acao)
     
     ar1.append(...[area,empr])
     ar2.append(...[data,stat])
@@ -170,7 +216,7 @@ function setPageExperiencia(content,title,index)
 
     if (item.resumo)
     {
-      resm.textContent = item.resumo
+      resm.textContent = parseWildcards(item.resumo)
       ar3.append(resm)
       col.append(ar3)
     }
@@ -187,19 +233,19 @@ function setPageProjetos(content,title,index)
   var sec = document.createElement('section')
 
   // sec.classList.add('flex-col')
-  tit.textContent = title
+  tit.textContent = parseWildcards(title)
 
   content.forEach(item => {
     var p = document.createElement('p')
 
     var innerHtml = item.link === "" ?
-      ' <span>' + item.area + '</span>'
+      ' <span>' + parseWildcards(item.area) + '</span>'
       : 
         (item.link !== "private" ?
-        ' <a class="link" href="'+item.link+'" target="blank">' + item.area + '&nbsp;<i class="fa fa-up-right-from-square tags"></i></a>' :
-        ' <span class="link">' + item.area + '&nbsp;<i class="fa fa-user-lock tags"></i></a>')
+        ' <a class="link" href="'+item.link+'" target="blank">' + parseWildcards(item.area) + '&nbsp;<i class="fa fa-up-right-from-square tags"></i></a>' :
+        ' <span class="link">' + parseWildcards(item.area) + '&nbsp;<i class="fa fa-user-lock tags"></i></a>')
       
-    p.innerHTML = item.titulo + innerHtml;
+    p.innerHTML = parseWildcards(item.titulo) + innerHtml;
     
     sec.append(p)
   })
@@ -212,14 +258,14 @@ function setPageConhecimentos(content, title)
   var tit = document.createElement('h3')
   var sec = document.createElement('section')
 
-  tit.textContent = title
+  tit.textContent = parseWildcards(title)
 
   sec.classList.add('flex-row', 'flex-wrap', 'skills')
 
   content.forEach(item => {
     var d = document.createElement('div')
     d.classList.add('g' + item[1])
-    d.textContent = item[0]
+    d.textContent = parseWildcards(item[0])
     sec.append(d)
   })
 
@@ -241,7 +287,7 @@ function setPageContatos(content)
     i.classList.add('noprint','pr-4')
     a.href = item.link
     a.target = "blank"
-    e.textContent = item.title
+    e.textContent = parseWildcards(item.title)
 
     a.append(i,e)
     p.append(a)
@@ -259,22 +305,13 @@ function setPageEndereco(content)
   content.forEach(item => {
     var p = document.createElement('p')
     
-    p.textContent = item.content
+    p.textContent = parseWildcards(item.content)
 
     sec.append(p)
   })
 
   sectionElement('sec-contato', [sec])
 }
-
-
-
-
-
-
-
-
-
 
 function sectionElement(classes, content)
 {
