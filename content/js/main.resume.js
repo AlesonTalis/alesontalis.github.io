@@ -44,6 +44,11 @@ function run()
           break
       }
     })
+
+    if (new URLSearchParams(window.location.search).has('achievements'))
+    {
+      loadAchievements()
+    }
   })
 }
 
@@ -327,4 +332,86 @@ function sectionElement(classes, content)
   section.append(...content)
 
   _main.append(section)
+}
+
+function loadAchievements()
+{
+  fetch('./content/data/achievements.json', {
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => setPageAchievements(data))
+  .catch(() => {})
+}
+
+function setPageAchievements(data)
+{
+  var tit = document.createElement('h3')
+  tit.textContent = data.title
+
+  var desc = document.createElement('p')
+  desc.classList.add('achievement-desc')
+  desc.textContent = data.description
+
+  var sec = document.createElement('section')
+  sec.classList.add('achievement-list')
+
+  data.games.forEach(game => {
+    var card = document.createElement('div')
+    card.classList.add('achievement-card')
+
+    var header = document.createElement('div')
+    header.classList.add('achievement-header')
+    var iconSpan = document.createElement('span')
+    iconSpan.classList.add('achievement-icon')
+    iconSpan.textContent = game.icon
+    header.append(iconSpan, document.createTextNode(' ' + game.name))
+
+    var stats = document.createElement('div')
+    stats.classList.add('achievement-stats')
+    var statsHours = document.createElement('span')
+    statsHours.textContent = '🕐 ' + game.hours + 'h jogadas'
+    var statsAch = document.createElement('span')
+    statsAch.textContent = '🏆 ' + game.achievements_unlocked + '/' + game.achievements_total + ' conquistas (' + game.completion + ')'
+    stats.append(statsHours, statsAch)
+
+    var barWrap = document.createElement('div')
+    barWrap.classList.add('achievement-bar-wrap')
+    var barFill = document.createElement('div')
+    barFill.classList.add('achievement-bar-fill')
+    barFill.style.width = game.completion
+    barWrap.append(barFill)
+
+    card.append(header, stats, barWrap)
+
+    if (game.highlights && game.highlights.length > 0)
+    {
+      game.highlights.forEach(hl => {
+        var hlDiv = document.createElement('div')
+        hlDiv.classList.add('achievement-highlight')
+
+        var hlName = document.createElement('div')
+        hlName.classList.add('achievement-highlight-name')
+        hlName.textContent = '⭐ ' + hl.name
+
+        var hlDesc = document.createElement('div')
+        hlDesc.classList.add('achievement-highlight-desc')
+        hlDesc.textContent = hl.description
+
+        var hlRarity = document.createElement('div')
+        hlRarity.classList.add('achievement-highlight-rarity')
+        hlRarity.textContent = '🎯 ' + hl.rarity + '% dos jogadores alcançaram — '
+        var hlRarityEm = document.createElement('em')
+        hlRarityEm.textContent = hl.rarity_label
+        hlRarity.append(hlRarityEm)
+
+        hlDiv.append(hlName, hlDesc, hlRarity)
+        card.append(hlDiv)
+      })
+    }
+
+    sec.append(card)
+  })
+
+  sectionElement('sec-achievements', [tit, desc, sec])
 }

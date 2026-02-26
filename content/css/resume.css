@@ -242,3 +242,85 @@ section h4
 
 body > main:not(:first-child){padding-top: 0;}
 body > main:not(:last-child){padding-bottom: 0;}
+
+
+/* Achievements Easter Egg */
+.sec-achievements .achievement-desc
+{
+  font-style: italic;
+  opacity: 0.7;
+  padding-bottom: calc(var(--padding) * 0.5);
+}
+.sec-achievements .achievement-list
+{
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) * 0.5);
+}
+.sec-achievements .achievement-card
+{
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  padding: calc(var(--padding) * 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) * 0.4);
+}
+.sec-achievements .achievement-header
+{
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.sec-achievements .achievement-icon
+{
+  font-style: normal;
+}
+.sec-achievements .achievement-stats
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--padding) * 1);
+  opacity: 0.85;
+}
+.sec-achievements .achievement-bar-wrap
+{
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-text);
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0.3;
+}
+.sec-achievements .achievement-bar-fill
+{
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.sec-achievements .achievement-highlight
+{
+  border-left: 3px solid var(--color-secondary);
+  padding-left: calc(var(--padding) * 0.6);
+}
+.sec-achievements .achievement-highlight-name
+{
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+.sec-achievements .achievement-highlight-desc
+{
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+.sec-achievements .achievement-highlight-rarity
+{
+  color: var(--color-primary);
+  font-size: 0.85em;
+  padding-top: calc(var(--padding) * 0.2);
+}
+.sec-achievements .achievement-highlight-rarity em
+{
+  font-style: normal;
+  font-weight: bold;
+}
