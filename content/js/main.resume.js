@@ -44,6 +44,11 @@ function run()
           break
       }
     })
+
+    if (new URLSearchParams(window.location.search).has('achievements'))
+    {
+      loadAchievements()
+    }
   })
 }
 
@@ -327,4 +332,68 @@ function sectionElement(classes, content)
   section.append(...content)
 
   _main.append(section)
+}
+
+function loadAchievements()
+{
+  fetch('./content/data/achievements.json', {
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => setPageAchievements(data))
+}
+
+function setPageAchievements(data)
+{
+  var tit = document.createElement('h3')
+  tit.textContent = data.title
+
+  var desc = document.createElement('p')
+  desc.classList.add('achievement-desc')
+  desc.textContent = data.description
+
+  var sec = document.createElement('section')
+  sec.classList.add('achievement-list')
+
+  data.games.forEach(game => {
+    var card = document.createElement('div')
+    card.classList.add('achievement-card')
+
+    var header = document.createElement('div')
+    header.classList.add('achievement-header')
+    header.innerHTML = '<span class="achievement-icon">' + game.icon + '</span> ' + game.name
+
+    var stats = document.createElement('div')
+    stats.classList.add('achievement-stats')
+
+    var barWrap = document.createElement('div')
+    barWrap.classList.add('achievement-bar-wrap')
+    var barFill = document.createElement('div')
+    barFill.classList.add('achievement-bar-fill')
+    barFill.style.width = game.completion
+    barWrap.append(barFill)
+
+    stats.innerHTML =
+      '<span>🕐 ' + game.hours + 'h jogadas</span>' +
+      '<span>🏆 ' + game.achievements_unlocked + '/' + game.achievements_total + ' conquistas (' + game.completion + ')</span>'
+
+    card.append(header, stats, barWrap)
+
+    if (game.highlights && game.highlights.length > 0)
+    {
+      game.highlights.forEach(hl => {
+        var hlDiv = document.createElement('div')
+        hlDiv.classList.add('achievement-highlight')
+        hlDiv.innerHTML =
+          '<div class="achievement-highlight-name">⭐ ' + hl.name + '</div>' +
+          '<div class="achievement-highlight-desc">' + hl.description + '</div>' +
+          '<div class="achievement-highlight-rarity">🎯 ' + hl.rarity + '% dos jogadores alcançaram — <em>' + hl.rarity_label + '</em></div>'
+        card.append(hlDiv)
+      })
+    }
+
+    sec.append(card)
+  })
+
+  sectionElement('sec-achievements', [tit, desc, sec])
 }

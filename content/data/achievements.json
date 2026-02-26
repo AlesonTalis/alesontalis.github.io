@@ -1,0 +1,22 @@
+{
+  "title": "conquistas gaming",
+  "description": "Porque sim, isso é relevante para o meu currículo. Confia.",
+  "games": [
+    {
+      "name": "Factorio",
+      "icon": "⚙️",
+      "hours": 1100,
+      "achievements_unlocked": 88,
+      "achievements_total": 88,
+      "completion": "100%",
+      "highlights": [
+        {
+          "name": "Segunda estrela à direita e depois reto até amanhã",
+          "description": "Termine o jogo dentro de 40 horas",
+          "rarity": 0.3,
+          "rarity_label": "Ultra Rare"
+        }
+      ]
+    }
+  ]
+}
