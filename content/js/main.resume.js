@@ -341,6 +341,7 @@ function loadAchievements()
   })
   .then(response => response.json())
   .then(data => setPageAchievements(data))
+  .catch(() => {})
 }
 
 function setPageAchievements(data)
@@ -361,10 +362,18 @@ function setPageAchievements(data)
 
     var header = document.createElement('div')
     header.classList.add('achievement-header')
-    header.innerHTML = '<span class="achievement-icon">' + game.icon + '</span> ' + game.name
+    var iconSpan = document.createElement('span')
+    iconSpan.classList.add('achievement-icon')
+    iconSpan.textContent = game.icon
+    header.append(iconSpan, document.createTextNode(' ' + game.name))
 
     var stats = document.createElement('div')
     stats.classList.add('achievement-stats')
+    var statsHours = document.createElement('span')
+    statsHours.textContent = '🕐 ' + game.hours + 'h jogadas'
+    var statsAch = document.createElement('span')
+    statsAch.textContent = '🏆 ' + game.achievements_unlocked + '/' + game.achievements_total + ' conquistas (' + game.completion + ')'
+    stats.append(statsHours, statsAch)
 
     var barWrap = document.createElement('div')
     barWrap.classList.add('achievement-bar-wrap')
@@ -373,10 +382,6 @@ function setPageAchievements(data)
     barFill.style.width = game.completion
     barWrap.append(barFill)
 
-    stats.innerHTML =
-      '<span>🕐 ' + game.hours + 'h jogadas</span>' +
-      '<span>🏆 ' + game.achievements_unlocked + '/' + game.achievements_total + ' conquistas (' + game.completion + ')</span>'
-
     card.append(header, stats, barWrap)
 
     if (game.highlights && game.highlights.length > 0)
@@ -384,10 +389,23 @@ function setPageAchievements(data)
       game.highlights.forEach(hl => {
         var hlDiv = document.createElement('div')
         hlDiv.classList.add('achievement-highlight')
-        hlDiv.innerHTML =
-          '<div class="achievement-highlight-name">⭐ ' + hl.name + '</div>' +
-          '<div class="achievement-highlight-desc">' + hl.description + '</div>' +
-          '<div class="achievement-highlight-rarity">🎯 ' + hl.rarity + '% dos jogadores alcançaram — <em>' + hl.rarity_label + '</em></div>'
+
+        var hlName = document.createElement('div')
+        hlName.classList.add('achievement-highlight-name')
+        hlName.textContent = '⭐ ' + hl.name
+
+        var hlDesc = document.createElement('div')
+        hlDesc.classList.add('achievement-highlight-desc')
+        hlDesc.textContent = hl.description
+
+        var hlRarity = document.createElement('div')
+        hlRarity.classList.add('achievement-highlight-rarity')
+        hlRarity.textContent = '🎯 ' + hl.rarity + '% dos jogadores alcançaram — '
+        var hlRarityEm = document.createElement('em')
+        hlRarityEm.textContent = hl.rarity_label
+        hlRarity.append(hlRarityEm)
+
+        hlDiv.append(hlName, hlDesc, hlRarity)
         card.append(hlDiv)
       })
     }
